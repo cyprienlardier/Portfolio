@@ -176,6 +176,7 @@ a:hover {
     background: var(--card-dark);
     border-radius: 8px;
     overflow: hidden; /* Pour que l'image ne dépasse pas */
+    position: relative; /* Permet overlay et z-index sur le contenu */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -190,6 +191,38 @@ a:hover {
     height: 220px; /* Hauteur fixe pour l'image */
     object-fit: cover; /* L'image couvre la zone sans se déformer */
     display: block;
+    /* Effet hover : transition pour un zoom fluide */
+    transition: transform 0.45s cubic-bezier(.2,.9,.3,1);
+}
+
+/* Overlay subtil et animation sur hover */
+.project-card::before {
+    content: "";
+    position: absolute;
+    inset: 0; /* top:0; right:0; bottom:0; left:0 */
+    background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,0.45) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.project-card .project-info {
+    position: relative; /* au-dessus de l'overlay */
+    z-index: 2;
+    transition: transform 0.35s ease, background-color 0.3s ease;
+}
+
+.project-card:hover img {
+    transform: scale(1.06); /* léger zoom sur l'image */
+}
+
+.project-card:hover .project-info {
+    transform: translateY(-8px); /* remonte légèrement le bloc d'info */
+}
+
+.project-card:hover::before {
+    opacity: 1;
 }
 
 .project-info {
@@ -289,6 +322,23 @@ footer {
 .fade-in.show {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* ======== OVERLAY DE TRANSITION AU CLIC (page transition) ======== */
+#page-transition-overlay {
+    position: fixed;
+    inset: 0; /* couvre tout l'écran */
+    background: var(--bg-dark);
+    z-index: 9999;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.45s cubic-bezier(.2,.9,.3,1);
+    pointer-events: none; /* bloqué tant qu'inactif */
+}
+
+#page-transition-overlay.show {
+    transform: scaleY(1);
+    pointer-events: auto; /* bloque les interactions pendant la transition */
 }
 
 
