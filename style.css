@@ -1,0 +1,328 @@
+/* ======== VARIABLES DE COULEUR (pour tout changer facilement) ======== */
+:root {
+    --bg-dark: #16161a;
+    --card-dark: #242629;
+    --text-light: #efeff1;
+    --text-gray: #94a1b2;
+    --primary: #7f5af0;     /* Le violet "créa" */
+    --secondary: #2cb67d;  /* Le vert "digital" */
+}
+
+/* ======== RESET & CONFIGURATION GLOBALE ======== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Indispensable pour gérer les tailles */
+}
+
+html {
+    scroll-behavior: smooth; /* Pour un défilement fluide lors des clics sur la nav */
+}
+
+body {
+    font-family: 'Poppins', sans-serif; /* La police moderne importée */
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* ======== STYLES RÉUTILISABLES ======== */
+.container {
+    max-width: 1100px;
+    margin: 0 auto; /* Centre le contenu */
+    padding: 0 20px;
+}
+
+section {
+    padding: 80px 0;
+}
+
+h1, h2, h3 {
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+p {
+    margin-bottom: 15px;
+    color: var(--text-gray);
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--secondary);
+}
+
+/* ======== BARRE DE NAVIGATION ======== */
+.navbar {
+    background: var(--bg-dark);
+    padding: 20px 0;
+    position: sticky; /* Reste collée en haut */
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid var(--card-dark);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-light);
+}
+
+.navbar .logo:hover {
+    color: var(--primary);
+}
+
+.navbar nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.navbar nav li {
+    margin-left: 25px;
+}
+
+.navbar nav a {
+    color: var(--text-light);
+    font-weight: 600;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent; /* Prépare l'animation au survol */
+}
+
+.navbar nav a:hover {
+    color: var(--primary);
+    border-bottom-color: var(--primary);
+}
+
+/* ======== SECTION HÉROS ======== */
+#hero {
+    min-height: 80vh; /* Prend 80% de la hauteur de l'écran */
+    display: flex;
+    align-items: center;
+    text-align: left;
+}
+
+#hero h1 {
+    font-size: 3.5rem;
+}
+
+#hero .highlight {
+    color: var(--primary);
+}
+
+#hero h2 {
+    font-size: 2rem;
+    color: var(--secondary);
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+#hero p {
+    font-size: 1.1rem;
+    max-width: 600px;
+    color: var(--text-gray);
+}
+
+.cta-button {
+    display: inline-block;
+    background: var(--primary);
+    color: var(--text-light);
+    padding: 12px 25px;
+    margin-top: 20px;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+    background: var(--secondary);
+    color: var(--bg-dark);
+    transform: translateY(-3px); /* Effet de "soulèvement" */
+}
+
+/* ======== SECTION PROJETS ======== */
+.project-grid {
+    display: grid;
+    /* Crée une grille responsive : 
+       - auto-fit: autant de colonnes que possible
+       - minmax(300px, 1fr): chaque colonne fait au min 300px et s'adapte
+    */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px; /* Espace entre les cartes */
+}
+
+.project-card {
+    background: var(--card-dark);
+    border-radius: 8px;
+    overflow: hidden; /* Pour que l'image ne dépasse pas */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-10px); /* L'effet "créa" au survol */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.project-card img {
+    width: 100%;
+    height: 220px; /* Hauteur fixe pour l'image */
+    object-fit: cover; /* L'image couvre la zone sans se déformer */
+    display: block;
+}
+
+.project-info {
+    padding: 25px;
+}
+
+.project-category {
+    display: inline-block;
+    background: var(--secondary);
+    color: var(--bg-dark);
+    padding: 3px 10px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.project-card h3 {
+    color: var(--text-light);
+    margin-bottom: 10px;
+}
+
+.project-link {
+    font-weight: 600;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+/* ======== SECTION À PROPOS ======== */
+#a-propos .container {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* 2/3 pour le texte, 1/3 pour l'image */
+    gap: 40px;
+    align-items: center;
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 300px; /* Taille max de l'image */
+    border-radius: 50%; /* Image ronde, très design */
+    border: 5px solid var(--primary);
+    margin: 0 auto;
+    display: block;
+}
+
+.skills-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap; /* Les compétences passent à la ligne si pas de place */
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.skills-list li {
+    background: var(--card-dark);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* ======== SECTION CONTACT ======== */
+#contact {
+    background: var(--card-dark); /* Change la couleur de fond pour cette section */
+    text-align: center;
+}
+
+#contact h2 {
+    color: var(--text-light);
+}
+
+.contact-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ======== PIED DE PAGE ======== */
+footer {
+    text-align: center;
+    padding: 30px 0;
+    border-top: 1px solid var(--card-dark);
+    color: var(--text-gray);
+    font-size: 0.9rem;
+}
+
+
+/* ======== STYLES POUR L'ANIMATION JS (Fade-in) ======== */
+
+/* 1. L'état initial : caché */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* 2. L'état final : visible (la classe 'show' est ajoutée par JavaScript) */
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* ======== AJUSTEMENTS RESPONSIVES (Pour les téléphones) ======== */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    h2 {
+        font-size: 2rem;
+    }
+
+    /* Barre de navigation (à améliorer plus tard avec un menu burger JS) */
+    .navbar nav ul {
+        display: none; /* Cache la nav sur mobile pour l'instant */
+    }
+
+    #hero {
+        text-align: center;
+        min-height: 60vh;
+    }
+    #hero h2 {
+        text-align: center;
+    }
+
+    #a-propos .container {
+        grid-template-columns: 1fr; /* Passe à une seule colonne */
+        text-align: center;
+    }
+    .about-image {
+        order: -1; /* Met l'image en premier */
+        margin-bottom: 30px;
+    }
+    .skills-list {
+        justify-content: center;
+    }
+}
