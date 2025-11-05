@@ -1,0 +1,53 @@
+# Nom de ton action
+name: Deploy static site to Pages
+
+# Quand lancer l'action ?
+on:
+  # À chaque fois que tu 'push' sur la branche 'main'
+  push:
+    branches: ["main"]
+  
+  # Permet aussi de le lancer manuellement depuis l'onglet Actions
+  workflow_dispatch:
+
+# Autorisations nécessaires pour que l'action puisse écrire sur GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Les étapes du travail
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }} # Sortira l'URL à la fin
+    runs-on: ubuntu-latest
+    steps:
+      # 1. Récupère le code de ton dépôt
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      # 2. Prépare les fichiers de ton site pour le déploiement
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+      
+      # 3. "Construit" le site (ici, on dit juste où sont les fichiers)
+      # Si ton site est à la racine, utilise '.'
+      # Si ton site est dans un dossier 'public' ou 'dist', utilise './public' ou './dist'
+      - name: Build with Jekyll (ou juste charger les fichiers)
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./
+          destination: ./_site
+          
+      # 4. Met en ligne les fichiers
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './_site'
+          
+      # 5. Déploie le site
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
