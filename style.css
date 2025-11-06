@@ -376,3 +376,64 @@ footer {
         justify-content: center;
     }
 }
+
+/* ======== SITE BLOCKER / MAINTENANCE MODE ======== */
+#site-blocker {
+    position: fixed;
+    inset: 0; /* top:0; right:0; bottom:0; left:0 */
+    background: linear-gradient(135deg, #111217 0%, #1a1a1e 100%); /* sombre */
+    color: var(--text-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 99999;
+    padding: 40px;
+}
+
+#site-blocker .site-blocker-content {
+    max-width: 760px;
+}
+
+#site-blocker h1 {
+    font-size: 2rem;
+    margin-bottom: 8px;
+    letter-spacing: 0.4px;
+}
+
+#site-blocker p {
+    color: var(--text-gray);
+    font-size: 1.15rem;
+    margin-bottom: 6px;
+}
+
+#site-blocker .small {
+    font-size: 0.95rem;
+    margin-top: 12px;
+    color: rgba(255,255,255,0.6);
+}
+
+/* Optionnel : empêche le focus des éléments en arrière-plan pour lecteur d'écran */
+body *:not(#site-blocker):not(#site-blocker *) {
+    filter: blur(0.2px); /* léger flou pour distinguer */
+}
+
+/* Bouton de preview (visible uniquement si ?preview=true ou en local) */
+#preview-unlock-btn {
+    position: fixed;
+    top: 18px;
+    right: 18px;
+    z-index: 100000; /* au-dessus du site-blocker */
+    background: var(--primary);
+    color: var(--bg-dark);
+    border: none;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(127,90,240,0.15);
+}
+
+#preview-unlock-btn:hover {
+    transform: translateY(-2px);
+}
