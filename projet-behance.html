@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototype page Behance - Lardier Cyprien</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="custom-cursor"></div>
+
+    <header class="navigation-overlay">
+        <nav>
+            <a href="index.html#hero" class="nav-item">ACCUEIL</a>
+            <a href="index.html#projets" class="nav-item">PROJETS</a>
+            <a href="index.html#contact" class="nav-item">CONTACT</a>
+        </nav>
+        <a href="CV (11).pdf" class="cv-btn" target="_blank" rel="noopener">MON CV</a>
+    </header>
+
+    <a href="index.html#projets" class="back-link-large">← Retour aux projets</a>
+
+    <main id="content-container">
+        <section class="project-header">
+            <div class="proto-image-container">
+                <img src="Proto.png" alt="Prototype Behance partie 1" class="proto-full-image">
+                <img src="Proto 2.png" alt="Prototype Behance partie 2" class="proto-full-image">
+            </div>
+        </section>
+
+        <section class="project-content">
+            <div class="project-description">
+                <h1>Prototype page Behance</h1>
+                
+                <h2>Présentation du projet</h2>
+                <p>Ce projet consistait à créer un prototype fidèle d'une page Behance d'un artiste de notre choix. L'objectif était de reproduire l'interface utilisateur et l'expérience de navigation de la plateforme Behance, tout en présentant le travail d'un créateur de manière professionnelle et attrayante.</p>
+                
+                <h2>Objectifs du projet</h2>
+                <p>L'exercice visait à développer nos compétences en design UI et en prototypage interactif. Il s'agissait d'analyser la structure d'une page existante, de comprendre ses choix de design et de navigation, puis de les reproduire avec précision en utilisant Figma comme outil de conception.</p>
+                
+                <h2>Démarche créative</h2>
+                <p>Après avoir sélectionné un artiste inspirant sur Behance, j'ai étudié en détail la mise en page, la typographie, les espacements et les interactions de sa page. Le prototype a été conçu en respectant les standards de l'interface Behance tout en capturant l'essence du style visuel de l'artiste choisi.</p>
+                
+                <div class="project-tech">
+                
+                   
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Cyprien Lardier. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Custom cursor
+        const cursor = document.querySelector('.custom-cursor');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+    </script>
+</body>
+</html>

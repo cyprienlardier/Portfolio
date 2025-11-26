@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projets - Cyprien Lardier</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="javascript.js" defer></script>
+</head>
+<body>
+    
+    <div class="custom-cursor"></div>
+
+    <header class="navigation-overlay">
+        <nav>
+            <a href="accueil.html" class="nav-item">ACCUEIL</a>
+            <a href="projets.html" class="nav-item active">PROJETS</a>
+            <a href="contact.html" class="nav-item">CONTACT</a>
+        </nav>
+    </header>
+
+    <main id="content-container">
+        <section id="projets" class="page active">
+            <h2>MES RÉALISATIONS</h2>
+
+            <div class="filters-bar">
+                <button class="filter-btn active" data-filter="all">TOUS</button>
+                <button class="filter-btn" data-filter="illustrator"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Adobe_Illustrator_CC_icon.svg/48px-Adobe_Illustrator_CC_icon.svg.png" alt="Illustrator"></button>
+                <button class="filter-btn" data-filter="photoshop"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Adobe_Photoshop_CC_icon.svg/48px-Adobe_Photoshop_CC_icon.svg.png" alt="Photoshop"></button>
+                <button class="filter-btn" data-filter="figma"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Figma-logo.svg/48px-Figma-logo.svg.png" alt="Figma"></button>
+                <button class="filter-btn" data-filter="aftereffects"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Adobe_After_Effects_CC_icon.svg/48px-Adobe_After_Effects_CC_icon.svg.png" alt="After Effects"></button>
+                <button class="filter-btn" data-filter="react"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/48px-React-icon.svg.png" alt="React"></button>
+                <button class="filter-btn" data-filter="wordpress">WORDPRESS</button>
+                <button class="filter-btn" data-filter="html-css">HTML &amp; CSS</button>
+            </div>
+
+            <div class="projects-grid">
+                <a href="lien_vers_casestudy_1.html" class="project-card" data-category="illustrator">
+                    <img src="https://picsum.photos/600/400?random=1" alt="Aperçu du Projet A">
+                    <div class="project-info">
+                        <h3 class="project-title-accent">TITRE DU PROJET (A)</h3>
+                        <p>Ceci est une description du projet. Elle est courte et concise pour expliquer rapidement le rôle et la nature du travail effectué sur cette réalisation.</p>
+                        <div class="project-cta">Voir le projet</div>
+                    </div>
+                </a>
+
+                <a href="lien_vers_casestudy_2.html" class="project-card" data-category="photoshop">
+                    <img src="https://picsum.photos/600/400?random=2" alt="Aperçu du Projet B">
+                    <div class="project-info">
+                        <h3 class="project-title-accent">NOM DU CLIENT / PROJET (B)</h3>
+                        <p>Ceci est une description du projet. Elle est courte et concise pour expliquer rapidement le rôle et la nature du travail effectué sur cette réalisation.</p>
+                        <div class="project-cta">Voir le projet</div>
+                    </div>
+                </a>
+
+                <a href="lien_vers_casestudy_3.html" class="project-card" data-category="figma">
+                    <img src="https://picsum.photos/600/400?random=3" alt="Aperçu du Projet C">
+                    <div class="project-info">
+                        <h3 class="project-title-accent">DESIGN D'IDENTITÉ (C)</h3>
+                        <p>Ceci est une description du projet. Elle est courte et concise pour expliquer rapidement le rôle et la nature du travail effectué sur cette réalisation.</p>
+                        <div class="project-cta">Voir le projet</div>
+                    </div>
+                </a>
+
+                <a href="lien_vers_casestudy_4.html" class="project-card" data-category="aftereffects">
+                    <img src="https://picsum.photos/600/400?random=4" alt="Aperçu du Projet D">
+                    <div class="project-info">
+                        <h3 class="project-title-accent">DASHBOARD ANALYTIQUE (D)</h3>
+                        <p>Ceci est une description du projet. Elle est courte et concise pour expliquer rapidement le rôle et la nature du travail effectué sur cette réalisation.</p>
+                        <div class="project-cta">Voir le projet</div>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Cyprien Lardier. Tous droits réservés.</p>
+        </div>
+    </footer>
+</body>
+</html>

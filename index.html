@@ -3,129 +3,295 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cyprien Lardier - Portfolio MMI Création numérique</title>
-    
+    <title>Lardier Cyprien</title>
     <link rel="stylesheet" href="style.css">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="javascript.js" defer></script>
 </head>
 <body>
+    <!-- Preloader removed as requested -->
+    <div class="custom-cursor"></div>
 
-    <!-- SITE BLOCKER: Affiche un écran de maintenance pour empêcher l'accès public
-         Supprimez ou commentez ce bloc quand vous voulez rendre le site visible -->
-    <div id="site-blocker" aria-hidden="false">
-        <div class="site-blocker-content">
-            <h1>Le portfolio de Cyprien Lardier</h1>
-            <p>est en cours de réalisation.</p>
-            <p class="small">Merci de revenir plus tard.</p>
-        </div>
-    </div>
-
-
-    <header class="navbar">
-        <div class="container">
-            <a href="#" class="logo">Cyprien Lardier</a>
-            <nav>
-                <ul>
-                    <li><a href="#projets">Projets</a></li>
-                    <li><a href="#a-propos">À Propos</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
+    <header class="navigation-overlay">
+        <nav>
+            <a href="#hero" class="nav-item">ACCUEIL</a>
+            <a href="#apropos" class="nav-item">À PROPOS</a>
+            <a href="#projets" class="nav-item">PROJETS</a>
+            <a href="#contact" class="nav-item">CONTACT</a>
+        </nav>
+        <a href="CV (11).pdf" class="cv-btn" target="_blank" rel="noopener">MON CV</a>
     </header>
 
-    <main>
+  
 
-        <section id="hero" class="container">
-            <div class="hero-content">
-                <h1>Bonjour, je suis <span class="highlight">Cyprien Lardier</span></h1>
-                <h2>Étudiant BUT MMI Spécialité Créa</h2>
-                <p>Passionné par le design UI/UX, le graphisme et le montage vidéo. 
-                Bienvenue dans mon univers créatif.</p>
-                <a href="#projets" class="cta-button">Découvrir mes projets</a>
+    <main id="content-container">
+
+        <!-- HERO / LANDING SECTION -->
+        <section id="hero" class="hero section-landing">
+            <div class="hero-left">
+                <h1 class="hero-title">Bonjour, moi c'est<span class="hero-name">Cyprien</span></h1>
+                <p class="hero-sub">Je suis étudiant en 2ᵉ année de BUT Métiers du Multimédia et de l'Internet <br> à l'IUT du Limousin, à Limoges.</p>
+                <p class="hero-desc"> Je crée des sites web, des maquettes UX/UI, des visuels graphiques, des vidéos et des stratégies de communication digitale.
+J'aime donner vie à des projets créatifs et orientés utilisateur.<br> Parcourez mes réalisations et contactez-moi pour discuter de mes projet.</p>
+                <div class="hero-actions">
+                    <a href="#projets" class="btn btn-primary">Voir mes réalisations</a>
+                    <a href="#contact" class="btn btn-outline">Me contacter</a>
+                </div>
+            </div>
+            <div class="hero-right">
+                <img src="MOI.svg" alt="Bitmoji Cyprien" class="hero-bitmoji">
             </div>
         </section>
 
-       <section id="projets">
-            <div class="container">
-                <h2>Mes Réalisations</h2>
-                
-                <div class="project-grid">
-                    
-                    <article class="project-card fade-in">
-                        <img src="https://picsum.photos/300/200?random=1" alt="Placeholder projet 1">
-                        <div class="project-info">
-                            <span class="project-category">Catégorie (ex: UI/UX)</span>
-                            <h3>Nom de mon Projet 1</h3>
-                            <p>Ici, je mettrai une courte description de mon projet.</p>
-                            <a href="#" class="project-link">Voir plus</a>
+        <!-- À PROPOS SECTION -->
+        <section id="apropos" class="section-landing">
+            <h2>À PROPOS</h2>
+            <div class="about-intro">
+                <h3>Qui suis-je ?</h3>
+                <p>Étudiant en 2ᵉ année de BUT Métiers du Multimédia et de l'Internet à l'IUT du Limousin, j'ai développé une solide expertise à travers des projets variés et concrets. Mon parcours m'a permis d'acquérir des compétences en design graphique, développement web, vidéo et communication digitale.</p>
+                <p>Polyvalent et créatif, j'aime relever des défis techniques tout en gardant une approche centrée sur l'utilisateur. Chaque projet est pour moi une opportunité d'apprendre et de repousser mes limites.</p>
+                <p class="skills-intro">Voici les outils que je maîtrise :</p>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-card-inner">
+                        <div class="skill-card-front">
+                            <img src="Illustrator.png" alt="Adobe Illustrator">
+                            <h3>Illustrator</h3>
                         </div>
-                    </article>
-
-                    <article class="project-card fade-in">
-                        <img src="https://picsum.photos/300/200?random=2" alt="Placeholder projet 2">
-                        <div class="project-info">
-                            <span class="project-category">Catégorie (ex: Graphisme)</span>
-                            <h3>Nom de mon Projet 2</h3>
-                            <p>Ici, je mettrai une courte description de mon projet.</p>
-                            <a href="#" class="project-link">Voir plus</a>
+                        <div class="skill-card-back">
+                            <h3>Adobe Illustrator</h3>
+                            <p>Création de logos, illustrations vectorielles, identités visuelles et supports graphiques pour l'impression et le web.</p>
                         </div>
-                    </article>
+                    </div>
+                </div>
 
-                    <article class="project-card fade-in">
-                        <img src="https://picsum.photos/300/200?random=3" alt="Placeholder projet 3">
-                        <div class="project-info">
-                            <span class="project-category">Catégorie (ex: Vidéo)</span>
-                            <h3>Nom de mon Projet 3</h3>
-                            <p>Ici, je mettrai une courte description de mon projet.</p>
-                            <a href="#" class="project-link">Voir plus</a>
+                <div class="skill-card">
+                    <div class="skill-card-inner">
+                        <div class="skill-card-front">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Adobe_Photoshop_CC_icon.svg/48px-Adobe_Photoshop_CC_icon.svg.png" alt="Adobe Photoshop">
+                            <h3>Photoshop</h3>
                         </div>
-                    </article>
-
-                    <article class="project-card fade-in">
-                        <img src="https://picsum.photos/300/200?random=4" alt="Placeholder projet 4">
-                        <div class="project-info">
-                            <span class="project-category">Catégorie (ex: Web)</span>
-                            <h3>Nom de mon Projet 4</h3>
-                            <p>Ici, je mettrai une courte description de mon projet.</p>
-                            <a href="#" class="project-link">Voir plus</a>
+                        <div class="skill-card-back">
+                            <h3>Adobe Photoshop</h3>
+                            <p>Retouche photo, montage visuel, création de maquettes web et design graphique pour tous supports digitaux.</p>
                         </div>
-                    </article>
+                    </div>
+                </div>
 
+                <div class="skill-card">
+                    <div class="skill-card-inner">
+                        <div class="skill-card-front">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Figma-logo.svg/48px-Figma-logo.svg.png" alt="Figma">
+                            <h3>Figma</h3>
+                        </div>
+                        <div class="skill-card-back">
+                            <h3>Figma</h3>
+                            <p>Design UI/UX, prototypage interactif, maquettes d'applications et sites web avec collaboration en temps réel.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-card-inner">
+                        <div class="skill-card-front">
+                            <img src="After effect.png" alt="After Effects">
+                            <h3>After Effects</h3>
+                        </div>
+                        <div class="skill-card-back">
+                            <h3>After Effects</h3>
+                            <p>Animation motion design, effets spéciaux, habillage vidéo et création de contenus animés pour le web et les réseaux sociaux.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-card-inner">
+                        <div class="skill-card-front">
+                            <img src="Davinci.png" alt="DaVinci Resolve">
+                            <h3>DaVinci Resolve</h3>
+                        </div>
+                        <div class="skill-card-back">
+                            <h3>DaVinci Resolve</h3>
+                            <p>Montage vidéo professionnel, color grading, étalonnage et post-production pour films et vidéos corporate.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-card-inner">
+                        <div class="skill-card-front">
+                            <img src="wordpres.png" alt="WordPress">
+                            <h3>WordPress</h3>
+                        </div>
+                        <div class="skill-card-back">
+                            <h3>WordPress</h3>
+                            <p>Création et gestion de sites web, e-commerce avec WooCommerce, personnalisation de thèmes et développement de fonctionnalités.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-card-inner">
+                        <div class="skill-card-front">
+                            <img src="html_css_nouveau-removebg-preview.png" alt="HTML & CSS">
+                            <h3>HTML & CSS</h3>
+                        </div>
+                        <div class="skill-card-back">
+                            <h3>HTML & CSS</h3>
+                            <p>Développement front-end, intégration web responsive, création d'interfaces modernes et optimisation de la performance.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-card-inner">
+                        <div class="skill-card-front">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/48px-Unofficial_JavaScript_logo_2.svg.png" alt="JavaScript">
+                            <h3>JavaScript</h3>
+                        </div>
+                        <div class="skill-card-back">
+                            <h3>JavaScript</h3>
+                            <p>Développement d'interactions dynamiques, manipulation du DOM, intégration d'APIs et création d'expériences web interactives.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-card-inner">
+                        <div class="skill-card-front">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Trello-logo-blue.svg/48px-Trello-logo-blue.svg.png" alt="Trello" class="trello-logo">
+                            <h3>Trello</h3>
+                        </div>
+                        <div class="skill-card-back">
+                            <h3>Trello</h3>
+                            <p>Gestion de projets, organisation des tâches, planification collaborative et suivi de l'avancement des projets en équipe.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="a-propos" class="container">
-            <div class="about-content fade-in">
-                <h2>Qui suis-je ?</h2>
-                <p>Actuellement en BUT MMI à [Ta Ville], ma spécialité créa me permet de toucher à tout ce qui est visuel. J'adore donner vie à des idées, que ce soit par le design d'interfaces, le montage vidéo ou la photographie.</p>
-                <p>Mon objectif est de devenir [Ton Objectif, ex: Directeur Artistique, UI/UX Designer...].</p>
-                
-                <h3>Mes Outils de prédilection :</h3>
-                <ul class="skills-list">
-                    <li>Figma</li>
-                    <li>Adobe Illustrator</li>
-                    <li>Adobe Photoshop</li>
-                    <li>Adobe Premiere Pro</li>
-                    <li>HTML / CSS</li>
-                </ul>
+        <!-- PROJETS SECTION -->
+        <section id="projets" class="section-landing">
+            <h2>MES PROJETS</h2>
+
+            <div class="filters-bar">
+                <button class="filter-btn active" data-filter="all">TOUS</button>
+                <button class="filter-btn" data-filter="illustrator"><img src="Illustrator.png" data-img-color="illustrator couleur.png" alt="Illustrator"></button>
+                <button class="filter-btn" data-filter="photoshop"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Adobe_Photoshop_CC_icon.svg/48px-Adobe_Photoshop_CC_icon.svg.png" alt="Photoshop"></button>
+                <button class="filter-btn" data-filter="figma"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Figma-logo.svg/48px-Figma-logo.svg.png" alt="Figma"></button>
+                <button class="filter-btn" data-filter="aftereffects"><img src="After effect.png" data-img-color="after effect couleur.png" alt="After Effects"></button>
+                <button class="filter-btn" data-filter="Davinci"><img src="Davinci.png" data-img-color="Davinci couleur.png" alt="Davinci"></button>
+                <button class="filter-btn" data-filter="wordpress"><img src="wordpres.png" data-img-color="wordrpress couleur.png" alt="WordPress"></button>
+                <button class="filter-btn" data-filter="html-css"><img src="html_css_nouveau-removebg-preview.png" alt="HTML & CSS"></button>
             </div>
-            <div class="about-image fade-in">
-                <img src="https://via.placeholder.com/400x400/7f5af0/16161a?text=Ta+Photo" alt="Une photo de [Ton Nom]">
+
+            <div class="projects-grid">
+                <a href="projet-site-streaming.html" class="project-card" data-category="html-css">
+                    <img src="Site web .png" alt="Concevoir un site avec une source de données">
+                    <div class="project-info">
+                        <h3 class="project-title-accent">Concevoir un site avec une source de données</h3>
+                        <p>réalisation d'un site web de streaming relié à une base de données.</p>
+                        <div class="project-cta">Voir le projet</div>
+                    </div>
+                </a>
+
+                <a href="projet-echo-du-vent.html" class="project-card" data-category="Davinci">
+                    <img src="2cho du vent .png" alt="Écho du vent">
+                    <div class="project-info">
+                        <h3 class="project-title-accent">Écho du vent</h3>
+                        <p>Réalisation d'un court métrage sur le thème d'une présence invisible.</p>
+                        <div class="project-cta">Voir le projet</div>
+                    </div>
+                </a>
+
+                <a href="projet-tarot.html" class="project-card" data-category="illustrator,photoshop">
+                    <img src="carte de tarot.png" alt="Carte de tarot">
+                    <div class="project-info">
+                        <h3 class="project-title-accent">Réalisation de jeux de Tarot</h3>
+                        <p>Réalisation de jeux de tarot dans deux style différents et sur deux logiciels différents.</p>
+                        <div class="project-cta">Voir le projet</div>
+                    </div>
+                </a>
+
+                <a href="projet-behance.html" class="project-card" data-category="figma">
+                    <img src="Proto.png" alt="Prototype page Behance">
+                    <div class="project-info">
+                        <h3 class="project-title-accent">Prototype page Behance</h3>
+                        <p>Réalisation d'un prototype de page behance pour présenter un projet de design UI.</p>
+                        <div class="project-cta">Voir le projet</div>
+                    </div>
+                </a>
+
+                 <a href="projet-olivium.html" class="project-card" data-category="figma">
+                    <img src="Olivium.png" alt="Olivium">
+                    <div class="project-info">
+                        <h3 class="project-title-accent">Olive Oil</h3>
+                        <p>Réalisation d'un prototype pour un site de vente d'huile d'olive.</p>
+                        <div class="project-cta">Voir le projet</div>
+                    </div>
+                </a>
+
+                  <a href="projet-hemera.html" class="project-card" data-category="figma,DaVinci">
+                    <img src="Hémera.png" alt="Application Héméra">
+                    <div class="project-info">
+                        <h3 class="project-title-accent">Application de sport pour Héméra</h3>
+                        <p>Réalisations d'un prototypage sur figma d'applications mobiles et d'une pub pour encourager la pratique sportive chez les coworkers d'Héméra.</p>
+                        <div class="project-cta">Voir le projet</div>
+                    </div>
+                </a>
+
+
+                <a href="projet-click-collect.html" class="project-card" data-category="figma,wordpress">
+                    <img src="Micromania.png" alt="Click and Collect">
+                    <div class="project-info">
+                        <h3 class="project-title-accent">Service click and collect</h3>
+                        <p>Réalisation d'un prototype sur Figma et WordPress pour une fonctionnalité de click and collect sur un site.</p>
+                        <div class="project-cta">Voir le projet</div>
+                    </div>
+                </a>
+
+                 <a href="projet-ugc.html" class="project-card" data-category="illustrator,photoshop">
+                    <img src="Logo mockup.png" alt="Mokup">
+                    <div class="project-info">
+                        <h3 class="project-title-accent">UGC MIAM</h3>
+                        <p>Réalisation de produits pour la marque UGC et stratégie marketing complète.</p>
+                        <div class="project-cta">Voir le projet</div>
+                    </div>
+                </a>
+
+
+            </div>
+        </section>
+        <!-- CONTACT SECTION: cartes de contact stylées -->
+        <section id="contact" class="section-landing contact-section">
+            <h2>CONTACT</h2>
+            <div class="contact-cards">
+                <div class="contact-card">
+                    <div class="contact-icon" aria-hidden="true">👥</div>
+                    <h3>Mes Réseaux</h3>
+                    <p>Retrouve-moi sur LinkedIn pour suivre mon parcours professionnel.</p>
+                    <a class="contact-btn" href="https://www.linkedin.com/feed/" target="_blank" rel="noopener">Mon LinkedIn</a>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon" aria-hidden="true">✉️</div>
+                    <h3>Mon Email</h3>
+                    <p>Le moyen le plus sûr de me contacter pour toute demande sérieuse.
+                        <span style="color: rgba(108,99,255,0.9);">lardiercyprien@gmail.com</span>
+                    </p>
+                    <a class="contact-btn" href="mailto:lardiercyprien@gmail.com">M'envoyer un email</a>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon" aria-hidden="true">📞</div>
+                    <h3>Mon Téléphone</h3>
+                    <p>Pour une discussion plus directe, n'hésite pas à m'appeler.</p>
+                    <a class="contact-btn" href="tel:+33771706246">07 71 70 62 46</a>
+                </div>
             </div>
         </section>
 
-        <section id="contact" class="container">
-            <div class="contact-content fade-in">
-                <h2>Contactez-moi</h2>
-                <p>N'hésitez pas à me contacter !</p>
-                <a href="mailto:ton.email@exemple.com" class="cta-button">Contactez-moi</a>
-                </div>
-        </section>
     </main>
 
     <footer>
@@ -134,6 +300,6 @@
         </div>
     </footer>
 
-    <script src="javascript.js"></script>
+    <!-- script already included with 'defer' in <head>; avoid double-loading -->
 </body>
 </html>

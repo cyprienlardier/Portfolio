@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Click and Collect - Lardier Cyprien</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="custom-cursor"></div>
+
+    <header class="navigation-overlay">
+        <nav>
+            <a href="index.html#hero" class="nav-item">ACCUEIL</a>
+            <a href="index.html#projets" class="nav-item">PROJETS</a>
+            <a href="index.html#contact" class="nav-item">CONTACT</a>
+        </nav>
+        <a href="CV (11).pdf" class="cv-btn" target="_blank" rel="noopener">MON CV</a>
+    </header>
+
+    <a href="index.html#projets" class="back-link-large">← Retour aux projets</a>
+
+    <main id="content-container">
+        <section class="project-header">
+            <div class="project-header-image-wrapper">
+                <img src="Micromania.png" alt="Click and Collect Micromania" class="project-header-image">
+            </div>
+        </section>
+
+        <section class="project-content">
+            <div class="project-description">
+                <h1>Service Click and Collect</h1>
+                
+                <h2>Présentation du projet</h2>
+                <p>Ce projet consiste en la création complète d'un système de click and collect pour un site e-commerce. De la conception du prototype sur Figma jusqu'à l'implémentation fonctionnelle sur WordPress, ce projet illustre une démarche complète de développement d'une fonctionnalité e-commerce moderne.</p>
+                
+                <h2>Phase de conception</h2>
+                <p>La première étape a été de concevoir sur Figma l'ensemble du parcours utilisateur pour le click and collect. Cela inclut la sélection des produits, le choix du point de retrait, la réservation du créneau horaire et la confirmation de commande. L'interface a été pensée pour être intuitive et rassurante, avec des étapes claires et des feedbacks visuels à chaque action.</p>
+                
+                <h2>Développement WordPress</h2>
+                <p>Le prototype a ensuite été intégré et développé sur WordPress, en utilisant WooCommerce comme base pour la gestion e-commerce. Des fonctionnalités personnalisées ont été ajoutées pour gérer les points de retrait, les créneaux horaires disponibles et les notifications aux clients et aux magasins.</p>
+                
+                <div class="project-links">
+                    <h3>Accéder au projet</h3>
+                    <div class="prototype-links">
+                        <a href="https://www.figma.com/design/6vRwwOBNLbDjosGT257I9l/Sa%C3%A9-301-Cyprien-Lardier-Micromania?node-id=18-16&p=f&t=ESYCPnvWoxOjecOh-0" class="prototype-link figma" target="_blank" rel="noopener">
+                            <span class="link-icon"></span>
+                            <span class="link-text">Prototype Figma</span>
+                        </a>
+                        <a href="#" class="prototype-link wordpress" target="_blank" rel="noopener">
+                            <span class="link-icon"></span>
+                            <span class="link-text">Site WordPress</span>
+                        </a>
+                    </div>
+                </div>
+                
+              
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Cyprien Lardier. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Custom cursor
+        const cursor = document.querySelector('.custom-cursor');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+    </script>
+</body>
+</html>

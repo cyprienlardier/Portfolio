@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application de sport Héméra - Lardier Cyprien</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="custom-cursor"></div>
+
+    <header class="navigation-overlay">
+        <nav>
+            <a href="index.html#hero" class="nav-item">ACCUEIL</a>
+            <a href="index.html#projets" class="nav-item">PROJETS</a>
+            <a href="index.html#contact" class="nav-item">CONTACT</a>
+        </nav>
+        <a href="CV (11).pdf" class="cv-btn" target="_blank" rel="noopener">MON CV</a>
+    </header>
+
+    <a href="index.html#projets" class="back-link-large">← Retour aux projets</a>
+
+    <main id="content-container">
+        <section class="project-header">
+            <div class="video-container">
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/JalnrRvc6v0?si=lU2A3UOorYHY_fPN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <section class="project-content">
+            <div class="project-description">
+                <h1>Application de sport pour Héméra</h1>
+                
+                <h2>Présentation du projet</h2>
+                <p>Ce projet a été réalisé dans le cadre d'une collaboration avec Héméra, un espace de coworking dynamique. L'objectif était de concevoir une application mobile encourageant la pratique sportive chez les coworkers, accompagnée d'une campagne publicitaire pour promouvoir cette initiative santé et bien-être au sein de la communauté.</p>
+                
+                <h2>Conception de l'application</h2>
+                <p>Le prototype d'application mobile a été entièrement conçu sur Figma avec une attention particulière portée à l'expérience utilisateur. L'interface propose des fonctionnalités adaptées aux professionnels : suivi d'activité, défis entre collègues, réservation de créneaux sportifs et système de récompenses pour maintenir la motivation.</p>
+                
+                <h2>Campagne publicitaire</h2>
+                <p>En complément de l'application, une campagne publicitaire a été développée pour sensibiliser et engager les coworkers. Les supports visuels mettent en avant les bénéfices du sport sur la productivité, le bien-être mental et la cohésion d'équipe, tout en reflétant l'identité dynamique et moderne d'Héméra.</p>
+                
+                <div class="project-links">
+                    <h3>Voir le prototype</h3>
+                    <div class="prototype-links">
+                        <a href="https://www.figma.com/proto/sutGHni0MJYRK1ea3XAUbH/SAE-2.02?node-id=36-55&starting-point-node-id=36%3A55" class="prototype-link figma" target="_blank" rel="noopener">
+                            <span class="link-text">Prototype Figma</span>
+                        </a>
+                    </div>
+                </div>
+                
+           
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Cyprien Lardier. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Custom cursor
+        const cursor = document.querySelector('.custom-cursor');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+    </script>
+</body>
+</html>

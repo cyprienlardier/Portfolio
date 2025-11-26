@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réalisation de jeux de Tarot - Lardier Cyprien</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="custom-cursor"></div>
+
+    <header class="navigation-overlay">
+        <nav>
+            <a href="index.html#hero" class="nav-item">ACCUEIL</a>
+            <a href="index.html#projets" class="nav-item">PROJETS</a>
+            <a href="index.html#contact" class="nav-item">CONTACT</a>
+        </nav>
+        <a href="CV (11).pdf" class="cv-btn" target="_blank" rel="noopener">MON CV</a>
+    </header>
+
+    <a href="index.html#projets" class="back-link-large">← Retour aux projets</a>
+
+    <main id="content-container">
+        <section class="project-header">
+            <div class="carousel-container">
+                <button class="carousel-btn prev" aria-label="Image précédente">‹</button>
+                <div class="carousel-images">
+                    <img src="Carte 1.png" alt="Carte de tarot 1" class="carousel-image active">
+                    <img src="Carte 2.png" alt="Carte de tarot 2" class="carousel-image">
+                    <img src="Carte 3.png" alt="Carte de tarot 3" class="carousel-image">
+                    <img src="Carte 4.png" alt="Carte de tarot 4" class="carousel-image">
+                    <img src="Carte 5.png" alt="Carte de tarot 5" class="carousel-image">
+                    <img src="Carte 6.png" alt="Carte de tarot 6" class="carousel-image">
+                    <img src="Carte 7.png" alt="Carte de tarot 7" class="carousel-image">
+                    <img src="Carte 8.png" alt="Carte de tarot 8" class="carousel-image">
+                    <img src="cARTE 9.png" alt="Carte de tarot 9" class="carousel-image">
+                </div>
+                <button class="carousel-btn next" aria-label="Image suivante">›</button>
+            </div>
+            <div class="carousel-dots"></div>
+        </section>
+
+        <section class="project-content">
+            <div class="project-description">
+                <h1>Réalisation de jeux de Tarot</h1>
+                
+                <h2>Présentation du projet</h2>
+                <p>Ce projet consiste en la création de deux jeux de tarot complets, chacun développé avec un style visuel distinct et réalisé sur deux logiciels différents : Adobe Illustrator et Adobe Photoshop.</p>
+                
+                <h2>Objectifs créatifs</h2>
+                <p>L'objectif était d'explorer les possibilités créatives offertes par ces deux outils professionnels tout en maintenant une cohérence graphique au sein de chaque jeu. Chaque carte a été pensée pour raconter une histoire visuelle unique tout en s'inscrivant dans l'univers symbolique du tarot.</p>
+                
+                <h2>Techniques utilisées</h2>
+                <p>Les cartes ont été conçues en utilisant des techniques variées : illustration vectorielle pour un style épuré et moderne, manipulation photographique et textures pour un rendu plus organique et mystique. Chaque approche a permis d'explorer différentes facettes de la création graphique.</p>
+                
+                <div class="project-tech">
+                   
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Cyprien Lardier. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Custom cursor
+        const cursor = document.querySelector('.custom-cursor');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
+        // Carousel functionality
+        const images = document.querySelectorAll('.carousel-image');
+        const dotsContainer = document.querySelector('.carousel-dots');
+        const prevBtn = document.querySelector('.carousel-btn.prev');
+        const nextBtn = document.querySelector('.carousel-btn.next');
+        let currentIndex = 0;
+
+        // Create dots
+        images.forEach((_, index) => {
+            const dot = document.createElement('span');
+            dot.classList.add('carousel-dot');
+            if (index === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => goToSlide(index));
+            dotsContainer.appendChild(dot);
+        });
+
+        const dots = document.querySelectorAll('.carousel-dot');
+
+        function goToSlide(index) {
+            images[currentIndex].classList.remove('active');
+            dots[currentIndex].classList.remove('active');
+            currentIndex = index;
+            images[currentIndex].classList.add('active');
+            dots[currentIndex].classList.add('active');
+        }
+
+        function nextSlide() {
+            const nextIndex = (currentIndex + 1) % images.length;
+            goToSlide(nextIndex);
+        }
+
+        function prevSlide() {
+            const prevIndex = (currentIndex - 1 + images.length) % images.length;
+            goToSlide(prevIndex);
+        }
+
+        prevBtn.addEventListener('click', prevSlide);
+        nextBtn.addEventListener('click', nextSlide);
+
+        // Auto-play (optional)
+        setInterval(nextSlide, 5000);
+    </script>
+</body>
+</html>
