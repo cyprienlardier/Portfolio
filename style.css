@@ -18,11 +18,18 @@ body {
     color: var(--color-text-light);
     font-family: var(--font-body);
     margin: 0;
+    padding: 0;
     /* Allow normal scroll on the content area */
     overflow-y: auto;
     overflow-x: hidden;
     min-height: 100vh;
     max-width: 100vw;
+    width: 100%;
+}
+
+* {
+    box-sizing: border-box;
+    max-width: 100%;
 }
 
 /* Titres Puissants */
@@ -175,6 +182,22 @@ html {
     .hero-portrait { width: 300px; height: 420px; margin-bottom: 10px; }
 }
 
+@media (max-width: 768px) {
+    .hero-actions {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        gap: 12px;
+    }
+    
+    .btn {
+        width: 100%;
+        max-width: 280px;
+        text-align: center;
+    }
+}
+
 
 /* Mise à jour du style de la navigation-overlay */
 .navigation-overlay {
@@ -239,6 +262,82 @@ html {
     background: var(--color-accent);
     box-shadow: 0 8px 30px rgba(108,99,255,0.28), 0 0 18px rgba(108,99,255,0.12) inset;
     transform: translateY(-1px);
+}
+
+/* Navigation responsive */
+@media (max-width: 1200px) {
+    .navigation-overlay {
+        padding: 6px 10px;
+        gap: 6px;
+        top: 2vh;
+        max-width: 90vw;
+    }
+    
+    .nav-item, .cv-btn {
+        font-size: 0.75rem;
+        padding: 5px 8px;
+        margin: 0 2px;
+        white-space: nowrap;
+    }
+    
+    .cv-btn {
+        margin-left: 6px;
+    }
+}
+
+@media (max-width: 992px) {
+    .navigation-overlay {
+        padding: 5px 8px;
+        gap: 5px;
+    }
+    
+    .nav-item, .cv-btn {
+        font-size: 0.7rem;
+        padding: 5px 8px;
+        margin: 0 2px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navigation-overlay {
+        padding: 6px 10px;
+        gap: 6px;
+        top: 1vh;
+        border-radius: 25px;
+        max-width: 95vw;
+        overflow-x: auto;
+        overflow-y: hidden;
+        white-space: nowrap;
+    }
+    
+    .navigation-overlay nav {
+        display: flex;
+        flex-direction: row;
+        gap: 4px;
+    }
+    
+    .nav-item, .cv-btn {
+        font-size: 0.75rem;
+        padding: 6px 10px;
+        margin: 0 2px;
+        text-align: center;
+        white-space: nowrap;
+    }
+    
+    .cv-btn {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .navigation-overlay {
+        padding: 5px 8px;
+    }
+    
+    .nav-item, .cv-btn {
+        font-size: 0.7rem;
+        padding: 5px 8px;
+    }
 }
 
 .custom-cursor {
@@ -1052,6 +1151,7 @@ footer .container {
 
 /* À Propos Section */
 #apropos {
+
     padding: 8vh 5vw;
     text-align: center;
 }
@@ -1189,8 +1289,23 @@ footer .container {
 
 @media (max-width: 768px) {
     .skills-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
         gap: 1.5rem;
+        max-width: 300px;
+    }
+    
+    .skill-card {
+        height: 140px;
+    }
+    
+    .skill-card-front img {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .skill-card-front img.trello-logo {
+        width: 70px;
+        height: 70px;
     }
     
     .skill-card {
