@@ -22,11 +22,16 @@
 
     <main id="content-container">
         <section class="project-header">
-            <div class="ugc-images-grid">
-                <img src="Mockup 1.png" alt="Mockup UGC 1" class="ugc-image">
-                <img src="Mockup 2.png" alt="Mockup UGC 2" class="ugc-image">
-                <img src="Logo mockup.png" alt="Logo UGC" class="ugc-image">
-                <img src="Marketing.png" alt="Stratégie Marketing UGC" class="ugc-image full-width">
+            <div class="carousel-container">
+                <div class="carousel-images">
+                    <img src="Marketing.png" alt="Stratégie Marketing UGC" class="carousel-image active">
+                    <img src="Mockup 1.png" alt="Mockup UGC 1" class="carousel-image">
+                    <img src="Mockup 2.png" alt="Mockup UGC 2" class="carousel-image">
+                    <img src="Logo mockup.png" alt="Logo UGC" class="carousel-image">
+                </div>
+                <button class="carousel-btn prev">‹</button>
+                <button class="carousel-btn next">›</button>
+                <div class="carousel-dots"></div>
             </div>
         </section>
 
@@ -63,6 +68,46 @@
             cursor.style.left = e.clientX + 'px';
             cursor.style.top = e.clientY + 'px';
         });
+
+        // Carousel
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-image');
+        const dotsContainer = document.querySelector('.carousel-dots');
+
+        // Create dots
+        slides.forEach((_, index) => {
+            const dot = document.createElement('span');
+            dot.classList.add('carousel-dot');
+            if (index === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => goToSlide(index));
+            dotsContainer.appendChild(dot);
+        });
+
+        const dots = document.querySelectorAll('.carousel-dot');
+
+        function goToSlide(n) {
+            slides[currentSlide].classList.remove('active');
+            dots[currentSlide].classList.remove('active');
+            currentSlide = n;
+            if (currentSlide >= slides.length) currentSlide = 0;
+            if (currentSlide < 0) currentSlide = slides.length - 1;
+            slides[currentSlide].classList.add('active');
+            dots[currentSlide].classList.add('active');
+        }
+
+        function nextSlide() {
+            goToSlide(currentSlide + 1);
+        }
+
+        function prevSlide() {
+            goToSlide(currentSlide - 1);
+        }
+
+        document.querySelector('.carousel-btn.next').addEventListener('click', nextSlide);
+        document.querySelector('.carousel-btn.prev').addEventListener('click', prevSlide);
+
+        // Auto play
+        setInterval(nextSlide, 5000);
     </script>
 </body>
 </html>
