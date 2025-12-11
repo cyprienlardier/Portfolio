@@ -65,11 +65,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // 2. MOUVEMENT DU CURSEUR PERSONNALISÉ
-    document.addEventListener('mousemove', (e) => {
-        // Déplacer le curseur avec la souris
-        cursor.style.left = `${e.clientX}px`;
-        cursor.style.top = `${e.clientY}px`;
-    });
+    if (cursor) {
+        document.addEventListener('mousemove', (e) => {
+            // Déplacer le curseur avec la souris
+            cursor.style.left = `${e.clientX}px`;
+            cursor.style.top = `${e.clientY}px`;
+        });
+    }
 });
 
 
