@@ -298,6 +298,50 @@ html {
     }
 }
 
+/* Burger Menu */
+.burger-menu {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: rgba(16, 16, 20, 0.9);
+    border: 2px solid var(--color-accent);
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 8px;
+    width: 45px;
+    height: 45px;
+    align-items: center;
+    justify-content: center;
+    
+    /* IMPORTANT - fixe sa position pour TOUS les écrans */
+    position: fixed;
+    top: 20px;
+    right: 15px;
+    z-index: 1001 !important;
+}
+
+.burger-menu span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: var(--color-accent);
+    border-radius: 3px;
+    transition: 0.3s ease;
+}
+
+/* Animation croix */
+.burger-menu.active span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.burger-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.burger-menu.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
 @media (max-width: 1200px) {
     .navigation-overlay {
         padding: 4px 8px;
@@ -356,35 +400,83 @@ html {
 }
 
 @media (max-width: 768px) {
-    .navigation-overlay {
-        padding: 6px 10px;
-        gap: 6px;
-        top: 1vh;
-        border-radius: 25px;
-        max-width: 95vw;
-        overflow-x: auto;
-        overflow-y: hidden;
-        white-space: nowrap;
-    }
-    
-    .navigation-overlay nav {
+    .burger-menu {
         display: flex;
-        flex-direction: row;
-        gap: 4px;
+        position: fixed;
+        top: 20px;
+        right: 15px;
+        z-index: 1001;
     }
     
-    .nav-item, .cv-btn {
-        font-size: 0.75rem;
-        padding: 6px 10px;
-        margin: 0 2px;
+    .navigation-overlay {
+        padding: 0;
+        background: transparent;
+        backdrop-filter: none;
+        box-shadow: none;
+        border: none;
+        position: static;
+        display: block;
+        left: auto;
+        top: auto;
+        transform: none;
+    }
+    
+    .navigation-overlay nav,
+    .navigation-overlay .nav-menu {
+        display: flex;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 280px;
+        height: 100vh;
+        background: rgba(16, 16, 20, 0.98);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        padding: 80px 20px 20px;
+        gap: 15px;
+        transition: right 0.3s ease;
+        border-left: 1px solid rgba(108, 99, 255, 0.3);
+        z-index: 1000;
+        visibility: hidden;
+    }
+    
+    .nav-menu.active {
+        right: 0;
+        visibility: visible;
+    }
+    
+    .nav-item {
+        font-size: 1rem;
+        padding: 15px 20px;
+        margin: 0;
+        text-align: left;
+        width: 100%;
+        border-radius: 8px;
+        display: block;
+    }
+    
+    .nav-item:hover {
+        background: rgba(108, 99, 255, 0.2);
+    }
+    
+    .cv-link {
+        background: var(--color-accent);
+        color: #fff;
+        margin-top: 20px;
         text-align: center;
-        white-space: nowrap;
     }
     
-    .cv-btn {
-        margin-left: 0;
-    }
+
+.burger-menu {
+    position: fixed !important;
+    top: 20px;
+    right: 15px;
 }
+}
+
 
 @media (max-width: 480px) {
     .navigation-overlay {

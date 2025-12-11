@@ -4,6 +4,38 @@ document.addEventListener('DOMContentLoaded', () => {
     const cursor = document.querySelector('.custom-cursor');
     const contentContainer = document.getElementById('content-container');
 
+    // Burger Menu Toggle
+    const burgerMenu = document.querySelector('.burger-menu');
+    const navMenu = document.querySelector('.nav-menu');
+    
+    if (burgerMenu && navMenu) {
+        // S'assurer que le menu est fermé au chargement
+        burgerMenu.classList.remove('active');
+        navMenu.classList.remove('active');
+        
+        burgerMenu.addEventListener('click', (e) => {
+            e.stopPropagation();
+            burgerMenu.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+        
+        // Fermer le menu au clic sur un lien
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                burgerMenu.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+        
+        // Fermer le menu au clic en dehors
+        document.addEventListener('click', (e) => {
+            if (!navMenu.contains(e.target) && !burgerMenu.contains(e.target)) {
+                burgerMenu.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+    }
+
     // 1. GESTION DU CHANGEMENT DE PAGE (Transitions d'Opacité)
     // Sur le site multi-page, on ne veut pas empêcher la navigation normale.
     // Ce handler n'intercepte les clics que si la page utilise le mode
